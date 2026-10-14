@@ -1,40 +1,37 @@
-# Better Ping Display - Fabric Edition
+# Better Ping Display Reforged
 
-[![](https://img.shields.io/curseforge/dt/406343?style=for-the-badge&logo=curseforge&label=Downloads&color=rgb(241%2C%20100%2C%2054))](https://www.curseforge.com/minecraft/mc-mods/better-ping-display-fabric) [![](https://img.shields.io/modrinth/dt/better-ping-display-fabric?style=for-the-badge&logo=modrinth&logoColor=rgb(27%2C%20217%2C%20106)&label=Downloads&color=rgb(27%2C%20217%2C%20106))](https://modrinth.com/mod/better-ping-display-fabric)
+Better Ping Display Reforged is a client-side Fabric mod that displays each player's latency as a number in the Minecraft player list. The server does not need the mod installed, and it works on vanilla servers.
 
+This project continues the original [Better Ping Display [Fabric]](https://github.com/vladmarica/better-ping-display-fabric) project by Vlad Marica (Quintinity). It is a community-maintained port and is not the original author's project.
 
-A [Fabric](https://fabricmc.net/) mod for Minecraft to display each player's ping in the player list as a number.
+## Compatibility
 
-Go [**here**](https://github.com/vladmarica/better-ping-display) for the Forge/NeoForge edition of this mod.
+- Minecraft Java Edition **26.3**
+- Fabric Loader **0.19.5 or newer**
 
-![](https://vladmarica.com/assets/minecraft/better-ping-display.png)
+This branch targets Minecraft 26.3 only.
 
-This is a client-side mod. The server doesn't need to have it installed. It works even when playing on vanilla servers.
+## Installation
+
+1. Install Fabric Loader for Minecraft 26.3.
+2. Download the Better Ping Display Reforged 26.3 jar from this repository's Releases.
+3. Put the jar in your Minecraft `mods` folder and launch the Fabric profile.
+
+Mod Menu and YetAnotherConfigLib (YACL) are optional. Install compatible versions of both to open the in-game settings screen from Mod Menu. Without them, the mod uses the values in `config/betterpingdisplay.json`.
 
 ## Configuration
-This mod's config file is `betterpingdisplay.json`. It contains the following options:
 
-| Option  | Default Value  | Description  |
-|---|---|---|
-| autoColorPingText  | `true` | Whether to color a player's ping based on their latency. |
-| renderPingBars  | `false` | Whether to also draw the default Minecraft ping bars  |
-| pingTextColor  | `#A0A0A0`  | The ping text color to use. Only works whens `autoColorPingText` is false |
-| pingTextFormatString | `%dms` | The format string for ping text. Must include a `%d`, which will be replaced dynamically by the actual ping value.
+The config file is `config/betterpingdisplay.json` and has these options:
 
-> As of mod version **1.2.0**, a GUI configuration screen is available if you have
-[Mod Menu](https://modrinth.com/mod/modmenu) and [YACL](https://modrinth.com/mod/yacl) installed. These are optional dependencies
-> and this mod will continue to work normally without them installed. 
+| Option | Default | Description |
+|---|---:|---|
+| `autoColorPingText` | `true` | Color the ping text according to latency. |
+| `renderPingBars` | `false` | Also render Minecraft's regular ping bars. |
+| `pingTextColor` | `#A0A0A0` | Text color when automatic coloring is disabled. |
+| `pingTextFormatString` | `%dms` | Format string for the latency; it must contain `%d`. |
 
-![](https://i.imgur.com/cX02gRg.png)
+## Credits and license
 
-## Supported Minecraft Versions
-* **1.15.x**
-* **1.16.x**
-* **1.17.x**
-* **1.18.x**
-* **1.19.x**
-* **1.20.x**
-* **1.21.x**
+This project is based on [Better Ping Display [Fabric]](https://github.com/vladmarica/better-ping-display-fabric), originally created by Vlad Marica. Original package names and the original copyright notice are retained. The project remains under the original MIT License; see [LICENSE](LICENSE).
 
-## Requirements
-* [Fabric](https://fabricmc.net/)
+Repository: [henrymmey/better-ping-display-reforged](https://github.com/henrymmey/better-ping-display-reforged)

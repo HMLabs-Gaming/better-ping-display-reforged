@@ -39,7 +39,7 @@ public class BetterPingDisplayMod implements ModInitializer {
 			}
 		}
 
-		LOGGER.info("BetterPingDisplay mod loaded");
+		LOGGER.info("Better Ping Display Reforged loaded");
 	}
 
 	public Config getConfig() {

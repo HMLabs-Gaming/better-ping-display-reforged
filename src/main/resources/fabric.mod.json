@@ -3,16 +3,14 @@
   "id": "betterpingdisplay",
   "version": "${version}",
 
-  "name": "Better Ping Display",
-  "description": "Shows the actual ping number instead of just bars in the player list!",
-  "authors": [
-    "Quintinity"
-  ],
+  "name": "Better Ping Display Reforged",
+  "description": "A continuation of Better Ping Display that shows ping values in the player list.",
+  "authors": ["Quintinity"],
 
   "contact": {
-    "homepage": "https://github.com/vladmarica/better-ping-display-fabric",
-    "sources": "https://github.com/vladmarica/better-ping-display-fabric",
-    "issues": "https://github.com/vladmarica/better-ping-display-fabric/issues"
+    "homepage": "https://gaming.hmlabs.eu/projects/mods/better-ping-display-reforged/",
+    "sources": "https://github.com/henrymmey/better-ping-display-reforged",
+    "issues": "https://github.com/HMLabs-Gaming/issues/issues"
   },
 
   "license": "MIT",
@@ -20,24 +18,18 @@
 
   "environment": "client",
   "entrypoints": {
-    "main": [
-      "com.vladmarica.betterpingdisplay.BetterPingDisplayMod"
-    ],
-    "modmenu": [
-      "com.vladmarica.betterpingdisplay.integ.ModMenuIntegration"
-    ]
+    "main": ["com.vladmarica.betterpingdisplay.BetterPingDisplayMod"],
+    "modmenu": ["com.vladmarica.betterpingdisplay.integ.ModMenuIntegration"]
   },
-  "mixins": [
-    "betterpingdisplay.mixins.json"
-  ],
+  "mixins": ["betterpingdisplay.mixins.json"],
 
   "depends": {
-    "fabricloader": ">=0.17",
+    "fabricloader": ">=0.19.5",
     "minecraft": "${minecraft_version}"
   },
 
   "suggests": {
-    "yet_another_config_lib_v3": ">=3.8.1+1.21.11-fabric"
+    "yet_another_config_lib_v3": ">=3.9.7+26.3-fabric"
   },
 
   "custom": {
