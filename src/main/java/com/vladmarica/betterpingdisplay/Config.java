@@ -43,7 +43,8 @@ public class Config {
   }
 
   public void setTextFormatString(String textFormatString) {
-    data.pingTextFormatString = textFormatString;
+    data.pingTextFormatString = textFormatString != null && textFormatString.contains("%d")
+        ? textFormatString : DEFAULT_PING_TEXT_FORMAT;
   }
 
   public boolean shouldAutoColorPingText() {

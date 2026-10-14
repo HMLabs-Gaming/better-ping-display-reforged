@@ -7,15 +7,13 @@ import dev.isxander.yacl3.api.*;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
 import dev.isxander.yacl3.api.controller.ColorControllerBuilder;
 import dev.isxander.yacl3.api.controller.StringControllerBuilder;
-import dev.isxander.yacl3.gui.controllers.string.StringController;
-import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 
 import java.awt.Color;
 import java.io.IOException;
-import java.util.function.Predicate;
 
 import static com.vladmarica.betterpingdisplay.BetterPingDisplayMod.LOGGER;
-import static net.minecraft.text.Text.translatable;
 
 public class YaclConfigScreenFactory implements ConfigScreenFactory<Screen> {
 
@@ -25,16 +23,16 @@ public class YaclConfigScreenFactory implements ConfigScreenFactory<Screen> {
         Config config = mod.getConfig();
 
         Option<Color> pingTextColorOption =  Option.<Color>createBuilder()
-                .name(translatable("betterpingdisplay.settings.pingTextColor"))
-                .description(OptionDescription.of(translatable("betterpingdisplay.settings.pingTextColor.description")))
+                .name(Component.translatable("betterpingdisplay.settings.pingTextColor"))
+                .description(OptionDescription.of(Component.translatable("betterpingdisplay.settings.pingTextColor.description")))
                 .binding(config.getTextColor(), config::getTextColor, config::setTextColor)
                 .controller(o -> ColorControllerBuilder.create(o).allowAlpha(false))
                 .available(!config.shouldAutoColorPingText())
                 .build();
 
         Option<Boolean> autoColorPingTextOption = Option.<Boolean>createBuilder()
-                .name(translatable("betterpingdisplay.settings.autoColorPingText"))
-                .description(OptionDescription.of(translatable("betterpingdisplay.settings.autoColorPingText.description")))
+                .name(Component.translatable("betterpingdisplay.settings.autoColorPingText"))
+                .description(OptionDescription.of(Component.translatable("betterpingdisplay.settings.autoColorPingText.description")))
                 .binding(
                         config.shouldAutoColorPingText(),
                         config::shouldAutoColorPingText,
@@ -44,19 +42,18 @@ public class YaclConfigScreenFactory implements ConfigScreenFactory<Screen> {
                 .build();
 
         Option<String> textFormatOption = Option.<String>createBuilder()
-                .name(translatable("betterpingdisplay.settings.pingTextFormatString"))
-                .description(OptionDescription.of(translatable("betterpingdisplay.settings.pingTextFormatString.description")))
+                .name(Component.translatable("betterpingdisplay.settings.pingTextFormatString"))
+                .description(OptionDescription.of(Component.translatable("betterpingdisplay.settings.pingTextFormatString.description")))
                 .binding(
                         config.getTextFormatString(),
                         config::getTextFormatString,
                         config::setTextFormatString)
                 .controller(StringControllerBuilder::create)
-                .customController((o) -> new ValidatedStringController(o, (s) -> s.contains("%d")))
                 .build();
 
         Option<Boolean> renderPingBarsOption = Option.<Boolean>createBuilder()
-                .name(translatable("betterpingdisplay.settings.renderPingBars"))
-                .description(OptionDescription.of(translatable("betterpingdisplay.settings.renderPingBars.description")))
+                .name(Component.translatable("betterpingdisplay.settings.renderPingBars"))
+                .description(OptionDescription.of(Component.translatable("betterpingdisplay.settings.renderPingBars.description")))
                 .binding(
                         config.shouldRenderPingBars(),
                         config::shouldRenderPingBars,
@@ -65,9 +62,9 @@ public class YaclConfigScreenFactory implements ConfigScreenFactory<Screen> {
                 .build();
 
         return YetAnotherConfigLib.createBuilder()
-                .title(translatable("betterpingdisplay.settings.title"))
+                .title(Component.translatable("betterpingdisplay.settings.title"))
                 .category(ConfigCategory.createBuilder()
-                        .name(translatable("betterpingdisplay.settings.title"))
+                        .name(Component.translatable("betterpingdisplay.settings.title"))
                         .option(autoColorPingTextOption)
                         .option(pingTextColorOption)
                         .option(textFormatOption)
@@ -84,17 +81,4 @@ public class YaclConfigScreenFactory implements ConfigScreenFactory<Screen> {
                 .generateScreen(parent);
     }
 
-    private static class ValidatedStringController extends StringController {
-        private final Predicate<String> validator;
-
-        public ValidatedStringController(Option<String> option, Predicate<String> validator) {
-            super(option);
-            this.validator = validator;
-        }
-
-        @Override
-        public boolean isInputValid(String input) {
-            return validator.test(input);
-        }
-    }
 }
