@@ -6,15 +6,15 @@ This project continues the original [Better Ping Display [Fabric]](https://githu
 
 ## Compatibility
 
-- Minecraft Java Edition **26.3**
+- Minecraft Java Edition **26.2**
 - Fabric Loader **0.19.5 or newer**
 
-This branch targets Minecraft 26.3 only.
+This branch targets Minecraft 26.2 only.
 
 ## Installation
 
-1. Install Fabric Loader for Minecraft 26.3.
-2. Download the Better Ping Display Reforged 26.3 jar from this repository's Releases.
+1. Install Fabric Loader for Minecraft 26.2.
+2. Download the Better Ping Display Reforged 26.2 jar from this repository's Releases.
 3. Put the jar in your Minecraft `mods` folder and launch the Fabric profile.
 
 Mod Menu and YetAnotherConfigLib (YACL) are optional. Install compatible versions of both to open the in-game settings screen from Mod Menu. Without them, the mod uses the values in `config/betterpingdisplay.json`.

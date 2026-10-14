@@ -29,7 +29,7 @@
   },
 
   "suggests": {
-    "yet_another_config_lib_v3": ">=3.9.7+26.3-fabric"
+    "yet_another_config_lib_v3": ">=3.9.7+26.2-fabric"
   },
 
   "custom": {
