@@ -1,5 +1,8 @@
 # Better Ping Display Reforged
 
+[![CuseForge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_vector.svg)](https://www.curseforge.com/minecraft/mc-mods/better-ping-display-reforged)
+[![GitHub](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg)](https://github.com/HMLabs-Gaming/better-ping-display-reforged)
+
 Better Ping Display Reforged is a client-side Fabric mod that displays each player's latency as a number in the Minecraft player list. The server does not need the mod installed, and it works on vanilla servers.
 
 This project continues the original [Better Ping Display [Fabric]](https://github.com/vladmarica/better-ping-display-fabric) project by Vlad Marica (Quintinity). It is a community-maintained port and is not the original author's project.
